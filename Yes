@@ -1,0 +1,83 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "GBN",
+   LoadingTitle = "🔫 GET BACK 💥",
+   LoadingSubtitle = "by 1_F0",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Example Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Key | Youtube Hub",
+      Subtitle = "Key System",
+      Note = "Key Is BaoBao",
+      FileName = "BaoBao", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/RSe0HDA6"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+OrionLib:MakeNotification({
+	Name = "ACTIVATED!",
+	Content = "WE FROM THE HOOD CUH",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+local GBNTab = Window:MakeTab({
+	Name = "Click It",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = GBNTab:AddSection({
+	Name = "GBN Section"
+})
+
+GBNTab:AddButton({
+	Name = "Forgot the name",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+  	end    
+})
+
+GBNTab:AddToggle({
+	Name = "THIS A TOGGLE",
+	Default = false,
+	Callback = function(Value)
+		print("GET BACK")
+	end    
+})
+
+GBNTab:AddColorpicker({
+	Name = "WOMP WOMP",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+GBNTab:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 20,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "BAO BAO",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+OrionLib:Init()
